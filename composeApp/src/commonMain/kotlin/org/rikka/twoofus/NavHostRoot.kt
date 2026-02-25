@@ -1,12 +1,12 @@
 package org.rikka.twoofus
 
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.Button
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.lifecycle.viewmodel.navigation3.rememberViewModelStoreNavEntryDecorator
 import androidx.navigation3.runtime.NavKey
+import androidx.navigation3.runtime.entryProvider
 import androidx.navigation3.runtime.rememberNavBackStack
 import androidx.navigation3.runtime.rememberSaveableStateHolderNavEntryDecorator
 import androidx.navigation3.ui.NavDisplay
@@ -14,11 +14,9 @@ import androidx.savedstate.serialization.SavedStateConfiguration
 import kotlinx.serialization.modules.SerializersModule
 import kotlinx.serialization.modules.polymorphic
 import org.rikka.twoofus.home.navigation.HomeRoute
-import androidx.lifecycle.viewmodel.navigation3.rememberViewModelStoreNavEntryDecorator
-import androidx.navigation3.runtime.NavEntry
-import androidx.navigation3.runtime.entryProvider
 import org.rikka.twoofus.home.navigation.homeScreen
-import org.rikka.twoofus.home.presentation.HomeScreen
+import org.rikka.twoofus.onboard.navigation.OnboardRoute
+import org.rikka.twoofus.onboard.navigation.onboardScreen
 
 /**
  * Created by rikka on 20/2/26.
@@ -30,11 +28,11 @@ internal fun NavHostRoot() {
     configuration = SavedStateConfiguration {
       serializersModule = SerializersModule {
         polymorphic(NavKey::class) {
-          subclass(HomeRoute::class, HomeRoute.serializer())
+          subclass(OnboardRoute::class, OnboardRoute.serializer())
         }
       }
     },
-    HomeRoute
+    OnboardRoute, HomeRoute
   )
   
   Scaffold(
@@ -47,6 +45,7 @@ internal fun NavHostRoot() {
         rememberViewModelStoreNavEntryDecorator()
       ),
       entryProvider = entryProvider {
+        onboardScreen()
         homeScreen()
       }
     )
