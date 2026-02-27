@@ -30,12 +30,6 @@ internal fun OnboardScreen() {
       .padding(vertical = 16.dp),
     horizontalAlignment = Alignment.CenterHorizontally
   ) {
-    Image(
-      painter = painterResource(Res.drawable.ic_default_avatar_boy),
-      contentDescription = "avatar"
-    )
-    
-    
   }
 }
 
