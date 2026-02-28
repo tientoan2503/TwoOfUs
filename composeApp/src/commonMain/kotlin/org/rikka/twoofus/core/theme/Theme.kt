@@ -4,7 +4,6 @@ import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Typography
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.Immutable
 import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.graphics.Brush
@@ -92,6 +91,12 @@ private val DarkExtendedColors = LoveDaysExtendedColors(
   avatarRingPartner = Teal400,
 )
 
+object TwogetherColors {
+  val colors: LoveDaysExtendedColors
+    @Composable
+    get() = LocalTwogetherExtendedColors.current
+}
+
 val LocalTwogetherExtendedColors = staticCompositionLocalOf { LightExtendedColors }
 
 @Composable
@@ -99,15 +104,8 @@ fun TwogetherTheme(
   darkTheme: Boolean = isSystemInDarkTheme(),
   content: @Composable () -> Unit,
 ) {
-  val extendedColors = if (darkTheme) DarkExtendedColors else LightExtendedColors
-  
-  CompositionLocalProvider(
-    LocalTwogetherExtendedColors provides extendedColors
-  ) {
-    MaterialTheme(
-      typography = Typography(),
-      
-      content = content,
-    )
-  }
+  MaterialTheme(
+    typography = Typography(),
+    content = content,
+  )
 }

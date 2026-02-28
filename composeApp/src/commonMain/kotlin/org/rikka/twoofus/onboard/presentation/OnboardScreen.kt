@@ -1,6 +1,5 @@
 package org.rikka.twoofus.onboard.presentation
 
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -10,10 +9,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import org.jetbrains.compose.resources.painterResource
-import org.rikka.twoofus.core.theme.LocalTwogetherExtendedColors
-import twoofus.composeapp.generated.resources.Res
-import twoofus.composeapp.generated.resources.ic_default_avatar_boy
+import org.rikka.twoofus.core.theme.TwogetherColors
 
 /**
  * Created by rikka on 23/2/26.
@@ -21,12 +17,10 @@ import twoofus.composeapp.generated.resources.ic_default_avatar_boy
 
 @Composable
 internal fun OnboardScreen() {
-  val extendedColors = LocalTwogetherExtendedColors.current
-  
   Column(
     modifier = Modifier
       .fillMaxSize()
-      .background(extendedColors.gradientPrimary)
+      .background(TwogetherColors.colors.gradientPrimary)
       .padding(vertical = 16.dp),
     horizontalAlignment = Alignment.CenterHorizontally
   ) {
