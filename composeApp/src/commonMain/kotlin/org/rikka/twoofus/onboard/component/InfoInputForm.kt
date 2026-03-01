@@ -12,7 +12,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.BasicTextField
@@ -90,8 +89,8 @@ fun InfoInputForm(
       modifier = Modifier
         .fillMaxWidth()
         .background(color = Pink100, shape = RoundedCornerShape(20.dp))
-        .border(width = 1.dp, color = Pink200, shape = RoundedCornerShape(20.dp))
-        .padding(14.dp)
+        .border(width = 3.dp, color = Pink200, shape = RoundedCornerShape(20.dp))
+        .padding(vertical = 18.dp, horizontal = 16.dp)
     ) {
       // Avatar and name
       Row(
@@ -102,7 +101,7 @@ fun InfoInputForm(
           modifier = Modifier.size(48.dp)
             .clip(shape = CircleShape)
             .background(color = Neutral0, shape = CircleShape)
-            .border(width = 1.dp, color = Pink400, shape = CircleShape),
+            .border(width = 1.dp, color = Pink200, shape = CircleShape),
           contentAlignment = Alignment.Center
         ) {
           // TODO: add feature select
@@ -182,8 +181,19 @@ fun InfoInputForm(
           style = TextStyles.Title20Bold.copy(color = Black, fontSize = 16.sp),
         )
         
-        BoxInput(modifier = Modifier.width(120.dp)) {
-        
+        Box(
+          modifier = Modifier
+            .height(48.dp)
+            .background(
+              color = Neutral0,
+              shape = RoundedCornerShape(14.dp)
+            ).padding(horizontal = 16.dp),
+          contentAlignment = Alignment.Center
+        ) {
+          Text(
+            text = "25/03/2000",
+            style = TextStyles.Body14Semibold.copy(color = Black)
+          )
         }
       }
     }

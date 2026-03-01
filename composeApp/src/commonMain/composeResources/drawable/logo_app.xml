@@ -1,0 +1,85 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="1024"
+    android:viewportHeight="1024">
+
+    <!-- ══ BACKGROUND: Rounded square Pink → Coral ══ -->
+    <path
+        android:pathData="M230,0 L794,0 Q1024,0 1024,230 L1024,794 Q1024,1024 794,1024 L230,1024 Q0,1024 0,794 L0,230 Q0,0 230,0 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:type="linear"
+                android:startX="0"
+                android:startY="0"
+                android:endX="1024"
+                android:endY="1024">
+                <item android:offset="0" android:color="#FFFF6B9D"/>
+                <item android:offset="1" android:color="#FFFF8C69"/>
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- ══ INNER GLOW overlay (radial, white 0→18%) ══ -->
+    <path
+        android:pathData="M230,0 L794,0 Q1024,0 1024,230 L1024,794 Q1024,1024 794,1024 L230,1024 Q0,1024 0,794 L0,230 Q0,0 230,0 Z"
+        android:fillAlpha="0.10"
+        android:fillColor="#FFFFFF"/>
+
+    <!-- ══ HEART: White → Pink-200 gradient ══ -->
+    <path
+        android:pathData="M512,790 C512,790 210,610 210,372 C210,258 292,178 390,178 C450,178 496,208 512,248 C528,208 574,178 634,178 C732,178 814,258 814,372 C814,610 512,790 512,790 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:type="linear"
+                android:startX="240"
+                android:startY="200"
+                android:endX="784"
+                android:endY="700">
+                <item android:offset="0"   android:color="#FFFFFFFF"/>
+                <item android:offset="1"   android:color="#FFFFD6E7"/>
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- ══ SPARKLE: Large top-right ══ -->
+    <path
+        android:pathData="M748,138 L752.4,155.6 L770,160 L752.4,164.4 L748,182 L743.6,164.4 L726,160 L743.6,155.6 Z"
+        android:fillColor="#FFFFFF"
+        android:fillAlpha="0.66"/>
+
+    <!-- ══ SPARKLE: Medium top-left ══ -->
+    <path
+        android:pathData="M206,208 L208.8,219.2 L220,222 L208.8,224.8 L206,236 L203.2,224.8 L192,222 L203.2,219.2 Z"
+        android:fillColor="#FFFFFF"
+        android:fillAlpha="0.42"/>
+
+    <!-- ══ SPARKLE: Small bottom-right ══ -->
+    <path
+        android:pathData="M813,636 L814.8,643.2 L822,645 L814.8,646.8 L813,654 L811.2,646.8 L804,645 L811.2,643.2 Z"
+        android:fillColor="#FFFFFF"
+        android:fillAlpha="0.28"/>
+
+    <!-- ══ AMBIENT DOTS ══ -->
+    <path
+        android:pathData="M230,256 m-28,0 a28,28 0 1,0 56,0 a28,28 0 1,0 -56,0"
+        android:fillColor="#FFFFFF"
+        android:fillAlpha="0.20"/>
+
+    <path
+        android:pathData="M804,220 m-18,0 a18,18 0 1,0 36,0 a18,18 0 1,0 -36,0"
+        android:fillColor="#FFFFFF"
+        android:fillAlpha="0.15"/>
+
+    <path
+        android:pathData="M840,676 m-13,0 a13,13 0 1,0 26,0 a13,13 0 1,0 -26,0"
+        android:fillColor="#FFFFFF"
+        android:fillAlpha="0.12"/>
+
+    <path
+        android:pathData="M188,618 m-11,0 a11,11 0 1,0 22,0 a11,11 0 1,0 -22,0"
+        android:fillColor="#FFFFFF"
+        android:fillAlpha="0.11"/>
+
+</vector>

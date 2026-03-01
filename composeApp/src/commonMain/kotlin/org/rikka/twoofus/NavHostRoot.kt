@@ -29,6 +29,7 @@ internal fun NavHostRoot() {
       serializersModule = SerializersModule {
         polymorphic(NavKey::class) {
           subclass(OnboardRoute::class, OnboardRoute.serializer())
+          subclass(HomeRoute::class, HomeRoute.serializer())
         }
       }
     },
